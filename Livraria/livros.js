@@ -1,16 +1,17 @@
+let livros= require("./livros.json");
 
     function criarArquivo(){
         let livrosTexto = JSON.stringify(livros);
-        cons fs = require('fs');
+        const fs = require('fs');
         fs.writeFileSync("livros.json", livrosTexto);
     }
-
+//criarArquivo();
 function mostraLivros(){
     livros.forEach((livro) => {
         console.log(livro.titulo + "-" +
                     livro.Autor + "Ano: " +
                     livro.Ano + "Páginas: " +
-                    livro.Paginas + "Preço: " +
+                    livro.paginas + "Preço: " +
                     livro.Preco)
     })
 }
@@ -24,7 +25,7 @@ livros.push({
     Genero: Genero,
     Ano: Ano,
     Preco: Preco,
-    Sinopse: Sinopse
+    Sinopse: Sinopse,
 });
 console.log("livro adicionado com sucesso!");
 }
